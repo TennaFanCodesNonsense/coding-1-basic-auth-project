@@ -5,29 +5,40 @@ APP PLANNING & DESIGN
 1. PROJECT NAME & THEME
 -------------------------
 - What is your app called, and what type of app is it?  
+Wk 29!!!!@#$%^&*&^%$##$%, it's an execrise for writing code that logs you in, and you look at sprites.
 - What style or vibe do you want users to experience?
+Geocities-like site
 - What about your app will require a log-in structure?
+Login screen, click make an account. Once you make one/a username, it gives you a sign in code, go back to sign in page. Now when you sign in, you'll
+ need a code to get past initial wall. and you'll have it. Then you will gain access to the site.  
+ **Random code every time.
+ ***Specify which kind of dancing sprite you want to see from the website when you are creating an account, then when you
+ log in you'll get a different version of the site.
 
 2. CORE FUNCTIONALITY
 -------------------------
 - What are the essential features your app must have?  
+Login execrise + idk maybe some dancing videogame sprites.
 - What optional features could make your app more interactive or personalized?
+Says your username, random code every time.
 
 3. SECRET OR PERSONALIZED CONTENT
 
 -------------------------
-- What content will users see after logging in?  
+- What content will users see after logging in? 
+The dancing sprites. 
 - Will this content change depending on who is using the app (admin, user, special user?)
+Yes. Which dancing sprites it is will change. Sign in for what character you want.
 
 4. USER EXPERIENCE (UX) DESIGN
 -------------------------
-- How should your app look and feel?
-- How will users navigate between pages?
+- How should your app look and feel? 
+- How will users navigate between pages? Buttons.
 
 5. SECURITY FEATURES
 -------------------------
-- What password and authentication rules will you enforce?  
-- How will you protect secret pages from unauthorized access?
+- What password and authentication rules will you enforce?  Include special characters, and make at leat 8 long.
+- How will you protect secret pages from unauthorized access? Admin gets code for the secret page upon login.
 
 6. OPTIONAL CREATIVE ENHANCEMENTS
 -------------------------

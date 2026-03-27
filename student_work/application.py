@@ -12,9 +12,13 @@ users = {
 # Login Screen Functions
 
 def login():
+    #actually logging in
+    if press register_button:
+        register() #does that send you to the page?
     pass
 
 def register():
+    username = user_input 
     pass
 
 def webpage():

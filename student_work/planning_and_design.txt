@@ -5,11 +5,15 @@ APP PLANNING & DESIGN
 1. PROJECT NAME & THEME
 -------------------------
 - What is your app called, and what type of app is it?  
-Wk 29!!!!@#$%^&*&^%$##$%, it's an execrise for writing code that logs you in, and you look at sprites.
+Sprite World, you log in, and you look at your name and sprites.
 - What style or vibe do you want users to experience?
-Geocities-like site
+Basic, simple.
 - What about your app will require a log-in structure?
-Login screen, click make an account. Once you make one/a username, it gives you a sign in code, go back to sign in page. Now when you sign in, you'll
+Login screen, click make an account. Once you make a username and password it is stored in a dictionary, and when you click
+return to login screen, sign in there, and you get to the main site.
+
+Not this, this was another idea\/
+it gives you a sign in code, go back to sign in page. Now when you sign in, you'll
  need a code to get past initial wall. and you'll have it. Then you will gain access to the site.  
  **Random code every time.
  ***Specify which kind of dancing sprite you want to see from the website when you are creating an account, then when you
@@ -18,27 +22,31 @@ Login screen, click make an account. Once you make one/a username, it gives you 
 2. CORE FUNCTIONALITY
 -------------------------
 - What are the essential features your app must have?  
-Login execrise + idk maybe some dancing videogame sprites.
+Login execrise + idk maybe some sprites.
 - What optional features could make your app more interactive or personalized?
-Says your username, random code every time.
+Says your username on the main page when you log in.
 
 3. SECRET OR PERSONALIZED CONTENT
 
 -------------------------
 - What content will users see after logging in? 
-The dancing sprites. 
+Their username in the welcome message, and if we have time, sprites. 
 - Will this content change depending on who is using the app (admin, user, special user?)
-Yes. Which dancing sprites it is will change. Sign in for what character you want.
+Yes. the name will change. If we have time we will do a admin thing.   Not applicable anymore, keeping jsut in case> Sign in for what character you want.
 
 4. USER EXPERIENCE (UX) DESIGN
 -------------------------
 - How should your app look and feel? 
-- How will users navigate between pages? Buttons.
+Generic. Modular.
+- How will users navigate between pages? 
+Buttons.
 
 5. SECURITY FEATURES
 -------------------------
-- What password and authentication rules will you enforce?  Include special characters, and make at leat 8 long.
-- How will you protect secret pages from unauthorized access? Admin gets code for the secret page upon login.
+- What password and authentication rules will you enforce?
+Include special characters, and make at least 8 long. There will be a message if your password doesn't meet requirements.
+- How will you protect secret pages from unauthorized access? 
+You need to log in first to get to your page. If someone doesn't have your password they can't get into your specific secret page.
 
 6. OPTIONAL CREATIVE ENHANCEMENTS
 -------------------------

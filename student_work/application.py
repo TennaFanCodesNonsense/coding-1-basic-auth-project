@@ -4,10 +4,10 @@ app = Flask(__name__)
 app.secret_key = "supersecretkey"
 
 #Password Dict
-users = {
-    "alice": "password123"
-    "placeholder" : "coolpassword"
-}
+# users = {
+#     "alice": "password123"
+#     "placeholder" : "coolpassword"
+# }
 
 # def get_db():
 #     conn = sqlite.connect("users.db")
@@ -24,6 +24,9 @@ users = {
 #     """)
 #     conn.commit()
 #     conn.close()
+
+#int_db()
+
 
 # HTML Code
 

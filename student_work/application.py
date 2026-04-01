@@ -5,6 +5,7 @@ app.secret_key = "supersecretkey"
 
 #Password Dict
 users = {
+    "alice": "password123"
     "placeholder" : "coolpassword"
 }
 

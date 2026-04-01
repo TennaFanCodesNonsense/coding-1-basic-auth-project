@@ -1,4 +1,5 @@
 from flask import Flask, request, redirect, url_for, render_template_string, session
+import sqlite3
 
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
@@ -9,23 +10,23 @@ app.secret_key = "supersecretkey"
 #     "placeholder" : "coolpassword"
 # }
 
-# def get_db():
-#     conn = sqlite.connect("users.db")
-#     conn.row_factory = sqlite3.Row
-#     return conn
+def get_db():
+    conn = sqlite3.connect("users.db")
+    conn.row_factory = sqlite3.Row
+    return conn
 
-# def init_db():
-#     conn = get_db()
-#     conn.execute("""
-#         CREATE TABLE IF NOT EXISTS users (
-#             username TEXT PRIMARY KEY,
-#             password TEXT)
+def init_db():
+    conn = get_db()
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS users (
+            username TEXT PRIMARY KEY,
+            password TEXT)
 
-#     """)
-#     conn.commit()
-#     conn.close()
+    """)
+    conn.commit()
+    conn.close()
 
-#int_db()
+init_db()
 
 
 # HTML Code
@@ -123,7 +124,14 @@ def login():
         username = request.form["username"]
         password = request.form["password"]
 
-        if username in users and users[username] == password:
+        conn = get_db()
+        user = conn.execute(
+            "SELECT * FROM users WHERE username=? AND password=?",
+            (username, password)
+        ).fetchone()
+        conn.close()
+
+        if user:
             session["user"] = username
             return redirect(url_for("secret"))
         else:
@@ -138,15 +146,23 @@ def register():
         username = request.form["username"]
         password = request.form["password"]
 
-        if username in users:
-            error = "Username already exists"
-        elif not username or not password:
+        if not username or not password:
             error = "Fields cannot be empty"
         else:
-            users[username] = password
-            return redirect(url_for("login"))
+            try:
+                conn = get_db()
+                conn.execute(
+                    "INSERT INTO users (username, password) VALUES (?, ?)",
+                    (username, password)
+                )
+                conn.commit()
+                conn.close()
+                return redirect(url_for("login"))
+            except sqlite3.IntegrityError:
+                error = "Username already exists"
 
     return render_template_string(register_page, error=error)
+
 
 @app.route("/secret")
 def secret():

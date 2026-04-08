@@ -20,7 +20,8 @@ def init_db():
     conn.execute("""
         CREATE TABLE IF NOT EXISTS users (
             username TEXT PRIMARY KEY,
-            password TEXT)
+            password TEXT,
+            choice TEXT)
 
     """)
     conn.commit()
@@ -100,7 +101,7 @@ register_page = base_style + """
 <form method="POST">
   <input name="username" placeholder="Username"><br>
   <input name="password" type="password" placeholder="Password"><br>
-    <input name="Type of photos signing up for" type="choice" placeholder="What type of photos?"><br>
+    <input name="choice" type="text" placeholder="What type of photos?"><br>
   <button type="submit">Sign Up</button>
 </form>
 <a href="/">Back to login</a>
@@ -115,6 +116,7 @@ secret_page = base_style + """
 <p>You got into the secret room!</p>
 <a href="/logout"><button>Logout</button></a>
 <img src="/static/shot.png" alt="suffering">
+<p>You chose {{ choice }}!</p>
 </div>
 """
 
@@ -147,15 +149,16 @@ def register():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
+        choice = request.form.get["choice"] #("choice", "None")
 
-        if not username or not password:
+        if not username or not password or not choice:
             error = "Fields cannot be empty"
         else:
             try:
                 conn = get_db()
                 conn.execute(
-                    "INSERT INTO users (username, password) VALUES (?, ?)",
-                    (username, password)
+                    "INSERT INTO users (username, password, choice) VALUES (?, ?, ?)",
+                    (username, password, choice)
                 )
                 conn.commit()
                 conn.close()

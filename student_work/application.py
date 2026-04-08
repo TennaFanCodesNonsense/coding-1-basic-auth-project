@@ -113,7 +113,7 @@ secret_page = base_style + """
 <h3>Welcome, {{ username }}!</h3>
 <p>You got into the secret room!</p>
 <a href="/logout"><button>Logout</button></a>
-<img src="student_work/shot.png" alt="suffering">
+<img src="/static/shot.png" alt="suffering">
 </div>
 """
 
